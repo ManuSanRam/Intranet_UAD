@@ -1,0 +1,240 @@
+/************************************************************************************************************************
+
+	UAD-main-style.css
+
+	This style sheet was created for Universidad de Artes Digitales Intranet System
+	December 22 2018 - by MANUEL SANTOS RAMÓN [ManuSanRam]
+	
+************************************************************************************************************************/
+#uad_heading_01 /* Page heading */
+{
+	font-family 		: Verdana;		/*  */
+	font-size 			: xx-large;		/*  */
+	color 				: #004d99;		/*  */
+}
+
+.uad_text /* Normal text paragraphs */
+{
+	font-family 		: Verdana;		/*  */
+	font-weight			: bold;		/*  */
+	color 				: #004d99;		/*  */
+}
+
+.uad_password_input /* Password type inputs */
+{
+	border 				: 2px solid black;		/*  */
+	border-radius 		: 6px;		/*  */
+	box-sizing 			: border-box;		/*  */
+	font-size			: 36px;		/*  */
+	padding 			: 6px 40px;		/*  */
+	transition			: width 0.3s ease-in-out;		/*  */
+	text-align			: center;
+	outline				: 0 none;		/*  */
+	
+	width				: 400px;		/*  */
+	height				: 100px;		/*  */
+}
+
+/***********************************************************************************************************************/
+
+.row /*  */
+{
+	display				: flex;		/*  */
+}
+
+.col /*  */
+{
+	flex				: 1;		/*  */
+}
+
+/***********************************************************************************************************************/
+
+.uad_button	/* Regular page button */
+{
+	background-color 	: #004d99;		/*  */
+	border 				: 4px solid #004d99;		/*  */
+	border-radius		: 6px;		/*  */
+	outline				: 0 none;		/*  */
+	
+	font-family 		: Verdana;		/*  */
+	color				: #FFFFFF;		/*  */
+	display				: inline-block;		/*  */
+	font-size			: 36px;		/*  */
+	
+	margin				: 4px 2px;		/*  */
+	padding				: 16px 44px;		/*  */
+	
+	text-align			: center;		/*  */
+	transition			: background-color 0.3s ease-in-out;		/*  */
+}
+
+.uad_button:active /* Regular button animation */
+{
+	font-family 		: Verdana;		/*  */
+	background-color	: #FFFFFF;		/*  */
+    color				: #000000;		/*  */
+    border				: 4px solid #004d99;		/*  */
+	outline				: 0 none;		/*  */
+}
+
+/***********************************************************************************************************************/
+
+.uad_form_button	/* Regular page button */
+{
+	background-color 	: #5FB404;		/*  */
+	border 				: 4px solid #5FB404;		/*  */
+	border-radius		: 6px;		/*  */
+	outline				: 0 none;		/*  */
+	
+	font-family 		: Verdana;		/*  */
+	color				: #FFFFFF;		/*  */
+	display				: inline-block;		/*  */
+	font-size			: 36px;		/*  */
+	
+	margin				: 4px 2px;		/*  */
+	padding				: 16px 44px;		/*  */
+	
+	text-align			: center;		/*  */
+	transition			: background-color 0.3s ease-in-out;		/*  */
+}
+
+.uad_form_button:active /* Regular button animation */
+{
+	font-family 		: Verdana;		/*  */
+	background-color	: #FFFFFF;		/*  */
+    color				: #000000;		/*  */
+    border				: 4px solid #5FB404;		/*  */
+	outline				: 0 none;		/*  */
+}
+
+/***********************************************************************************************************************/
+
+.uad_eyeicon_button /*  */
+{
+	background-image	: url('../media/image/eye.png');		/*  */
+	background-color 	: #004d99;		/*  */
+	background-position : 8px 6px;		/*  */
+	background-repeat	: no-repeat;		/*  */
+	border 				: 4px solid #004d99;		/*  */
+	border-radius		: 6px;
+	outline				: 0 none;		/**/
+	
+	color				: #FFFFFF;		/*  */
+	display				: inline-block;		/*  */
+	font-size			: 36px;		/*  */
+	
+	padding				: 0px 24px;		/*  */
+	
+	text-align			: center;		/*  */
+	transition			: background-color 0.3s ease-in-out;		/*  */
+}
+
+.uad_eyeicon_button:active /* Regular button animation */
+{
+	background-color	: #FFFFFF;		/*  */
+    color				: #000000;		/*  */
+    border				: 4px solid #004d99;		/*  */
+	outline				: 0 none;		/*  */
+}
+
+/***********************************************************************************************************************/
+
+.uad_num_button /*  */
+{
+	background-color 	: #004d99;		/*  */
+	border 				: 4px solid #004d99;		/*  */
+	border-radius		: 50%;		/*  */
+	outline				: 0 none;		/*  */
+	
+	font-family 		: Verdana;		/*  */
+	color				: #FFFFFF;		/*  */
+	display				: inline-block;		/*  */
+	font-size			: 56px;		/*  */
+	margin				: 8px 18px;		/*  */
+	
+	padding				: 16px 32px;		/*  */
+	transition			: background-color 0.3s ease-in-out;		/*  */
+}
+
+.uad_num_button:active /*  */
+{
+	font-family 		: Verdana;		/*  */
+	background-color	: #FFFFFF;		/*  */
+    color				: #000000; 		/*  */
+    border				: 4px solid #004d99;		/*  */
+	outline				: 0 none;		/*  */
+}
+
+/***********************************************************************************************************************/
+
+.uad_clear_button /*  */
+{
+	background-color 	: #DF7401;		/*  */
+	border 				: 4px solid #DF7401;		/*  */
+	border-radius		: 50%;		/*  */
+	
+	font-family 		: Verdana;		/*  */
+	color				: #FFFFFF;		/*  */
+	display				: inline-block;		/*  */
+	font-size			: 56px;		/*  */
+	margin				: 8px 18px;		/*  */
+	
+	padding				: 16px 32px;		/*  */
+	transition			: background-color 0.3s ease-in-out;		/*  */
+	outline				: 0 none;		/*  */
+}
+
+.uad_clear_button:active /*  */
+{
+	font-family 		: Verdana;		/*  */
+	background-color	: #FFFFFF;		/*  */
+    color				: #000000; 		/*  */
+    border				: 4px solid #DF7401;		/*  */
+	outline				: 0 none;		/*  */
+}
+
+/***********************************************************************************************************************/
+
+.uad_del_button /*  */
+{
+	background-color 	: #4da6ff;		/*  */
+	border 				: 4px solid #4da6ff;		/*  */
+	border-radius		: 50%;		/*  */
+	
+	font-family 		: Verdana;		/*  */
+	color				: #FFFFFF;		/*  */
+	display				: inline-block;		/*  */
+	font-size			: 56px;		/*  */
+	margin				: 8px 18px;		/*  */
+	
+	padding				: 16px 32px;		/*  */
+	transition			: background-color 0.3s ease-in-out;		/*  */
+	outline				: 0 none;		/*  */
+}
+
+.uad_del_button:active /*  */
+{
+	font-family 		: Verdana;		/*  */
+	background-color	: #FFFFFF;		/*  */
+    color				: #000000; 		/*  */
+    border				: 4px solid #4da6ff;		/*  */
+	outline				: 0 none;		/*  */
+}
+
+/***********************************************************************************************************************/
+
+.uad_footer /*  */
+{
+	position			: fixed;		/*  */
+	right				: 0;		/*  */
+	bottom				: 0;		/*  */
+	left				: 0;		/*  */
+	
+	padding				: 8px;		/*  */
+	
+	background-color	: #004d99;		/*  */
+	
+	font-family 		: Verdana;		/*  */
+	color				: #FFFFFF;		/*  */
+	text-align			: center;		/*  */
+}

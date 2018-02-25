@@ -1,0 +1,190 @@
+<!--------------------------------------------------------------------------------------------------
+
+	UAD-assist-LogIn.php
+	
+	
+
+--------------------------------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html>
+	<meta 
+		name = "viewport" 
+		content = "width = device-width, initial-scale = 1.0">
+		
+		<head>
+			<!-- Load PHP file -->
+			<!-- Load script file -->
+			<script 
+				type = "text/javascript" 
+				src = "../js/UAD-realtime-clock.js">
+			</script>
+			
+			<!-- Load the stylesheet -->
+			<link
+				rel = "stylesheet"
+				type = "text/css"
+				href = "../css/UAD-main-style.css">
+				
+			<!-- Page title -->
+			<title>
+				Asistencias - Iniciar sesión
+			</title>
+		</head>
+		
+		<body onload = "StartClock()">
+			<!-- UAD logo
+			<a 
+					href="http://www.uartesdigitales.edu.mx">
+				<img 
+					src="../media/image/uad_logo.png" 
+					alt="Universidad de Artes Digitales"
+					align="left"
+					width="285px"
+					height="235px"
+				>
+			</a>
+			
+			<br>
+			-->
+			
+			<!-- Page main heading -->
+			<center>
+				<h1
+					id = "uad_heading_01"
+					align = "center"
+					style = "font-size:36px">
+					Asistencias - Iniciar sesión
+				</h1>
+			</center>
+			
+			<center>
+				<p
+					class = "uad_text"
+					align = "center">		
+					Introduzca su clave de profesor para iniciar la clase...
+				</p>
+			</center>
+			
+			<br>
+			<br>
+			
+			<!-- Form inputs -->
+			<form>
+				<div
+					class = "row">
+					<div
+						class = "col"
+						align = "center">
+						<!-- Password bar -->
+						<input
+							id = "prof_password"
+							class = "uad_password_input"
+							type = "password" 
+							required
+							placeholder = "Insertar clave..."
+							maxlength = "4">
+						
+						<br><br>
+						
+						<!-- Log In button -->
+						<input
+							class = "uad_button"
+							type = "submit"
+							value = "I N I C I A R">
+							
+						<input
+							class = "uad_eyeicon_button"
+							onmousedown = "LookPassword()"
+							onmouseup = "HidePassword()"
+							type = "button">
+	
+					</div>
+					
+					<br><br>
+					
+					<div
+						class = "col"
+						align = "center">
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "1">			
+						
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "2">
+							
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "3">
+					
+						<br>
+					
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "4">			
+						
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "5">
+							
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "6">
+					
+						<br>
+					
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "7">			
+						
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "8">
+							
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "9">
+							
+						<br>
+					
+						<input
+							class = "uad_num_button"
+							type = "button"
+							value = "0">
+					</div>
+				</div>
+			</form>
+			
+			<!-- Real-time clock -->
+			<div
+				class = "uad_text"
+				id = "realTimeClock"
+				align = "center"
+				style = "font-size:72px">
+			</div>
+			
+			<br><br>
+			
+			<!-- Real-time Date -->
+			<div
+				class = "uad_text"
+				id = "todayDate"
+				align = "center"
+				style = "font-size:36px">
+			</div>
+			
+			<div
+				class = "uad_footer">
+				Universidad de Artes Digitales &copy 2018 - Guadalajara, Jalisco, M&eacutexico
+			</div>
+		</body>
+</html>
