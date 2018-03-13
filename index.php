@@ -18,6 +18,7 @@
 		<head>
 			<!--
 				Load script file
+				Loads the functions for this page
 			-->
 			<script 
 				type = "text/javascript" 
@@ -26,12 +27,15 @@
 			
 			<!--
 				Load the stylesheet
-				This stylesheet contains 
+				This stylesheet contains:
+				>> Buttons styling
+				>> Paragraphs and text styling
+				>> Custom formularies
 			-->
 			<link
 				rel = "stylesheet"
 				type = "text/css"
-				href = "../css/UAD-main-style.css?v=1.5">
+				href = "../css/UAD-main-style.css?v=2.3">
 				
 			<!--
 				Page title on Chrome, Firefox tabs
@@ -40,14 +44,12 @@
 				Inicio de sesión
 			</title>
 		</head>
+		
 		 <!--
 			The page performs the function RealTimeClock
 			This function is defined on file "UAD-realtime-clock.js"			
 		 -->
 		<body onload = "RealTimeClock()">
-			
-			<br>
-			
 			<!--
 				Page main heading 
 			-->
@@ -60,7 +62,7 @@
 				<h1
 					id = "uad_heading_01"
 					align = "center"
-					style = "font-size:36px">
+					style = "font-size:56px">
 					Inicio de sesión
 				</h1>
 			</center>
@@ -72,12 +74,12 @@
 				-->
 				<p
 					class = "uad_text"
-					align = "center">		
-					Introduzca su clave para ...
+					align = "center"
+					style = "font-size:24px">		
+					Introduzca su clave de profesor para iniciar sesión...
 				</p>
 			</center>
 			
-			<br>
 			<br>
 			
 			<!--
@@ -108,7 +110,7 @@
 							type = "password"
 							required
 							disabled = "disabled"
-							placeholder = "Insertar clave..."
+							placeholder = "Clave..."
 							maxlength = "4">
 						
 						<br><br>
@@ -120,7 +122,7 @@
 						<input
 							class = "uad_form_button"
 							type = "button"
-							onclick = "LogIn('../html/uad_asist_class.html')"
+							onclick = "LogIn('../php/uad_asist_class.php')"
 							value = "I N I C I A R">
 						
 						<!--
@@ -265,6 +267,8 @@
 				</div>
 			</form>
 			
+			<br>
+			
 			<!--
 				Real-time clock
 				Shows a real time clock on screen
@@ -273,10 +277,10 @@
 				class = "uad_text"
 				id = "realTimeClock"
 				align = "center"
-				style = "font-size:72px">
+				style = "font-size:76px">
 			</div>
 			
-			<br><br>
+			<br>
 			
 			<!--
 				Real-time Date
@@ -286,7 +290,7 @@
 				class = "uad_text"
 				id = "todayDate"
 				align = "center"
-				style = "font-size:36px">
+				style = "font-size:32px">
 			</div>
 			
 			<!--

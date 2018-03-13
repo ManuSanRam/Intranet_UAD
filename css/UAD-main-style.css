@@ -6,18 +6,26 @@
 	December 22 2018 - by MANUEL SANTOS RAMÓN [ManuSanRam]
 	
 ************************************************************************************************************************/
+/***********************************************************************************************************************/
 #uad_heading_01 /* Page heading */
 {
-	font-family 		: Verdana;		/*  */
-	font-size 			: xx-large;		/*  */
-	color 				: #004d99;		/*  */
+	font-family 		: Verdana;		/* Font */
+	font-size 			: xx-large;		/* Font size double extra large */
+	color 				: #004d99;		/* Blue font color */
+}
+
+#uad_heading_02 /*  */
+{
+	font-family 		: Verdana;		/* Font */
+	font-size 			: x-large;		/* Font size double extra large */
+	color 				: #004d99;		/* Blue font color */
 }
 
 .uad_text /* Normal text paragraphs */
 {
-	font-family 		: Verdana;		/*  */
-	font-weight			: bold;		/*  */
-	color 				: #004d99;		/*  */
+	font-family 		: Verdana;		/* Font */
+	font-weight			: bold;		/* Bold font */
+	color 				: #004d99;		/* Blue font color */
 }
 
 .uad_password_input /* Password type inputs */
@@ -37,12 +45,12 @@
 
 /***********************************************************************************************************************/
 
-.row /*  */
+.row /* A group of div elements horizontally aligned */
 {
-	display				: flex;		/*  */
+	display				: flex;		/* Display div element as flexible, to adapt to different screen sizes */
 }
 
-.col /*  */
+.col /* A group of div elements vertically aligned */
 {
 	flex				: 1;		/*  */
 }
@@ -109,7 +117,7 @@
 
 /***********************************************************************************************************************/
 
-.uad_eyeicon_button /*  */
+.uad_eyeicon_button /* Button used to toogle passwords between hidden/shown */
 {
 	background-image	: url('../media/image/eye.png');		/*  */
 	background-color 	: #004d99;		/*  */
@@ -139,11 +147,11 @@
 
 /***********************************************************************************************************************/
 
-.uad_num_button /*  */
+.uad_num_button /* Number button to insert a number in an input form */
 {
 	background-color 	: #004d99;		/*  */
 	border 				: 4px solid #004d99;		/*  */
-	border-radius		: 50%;		/*  */
+	border-radius		: 5%;		/*  */
 	outline				: 0 none;		/*  */
 	
 	font-family 		: Verdana;		/*  */
@@ -156,7 +164,7 @@
 	transition			: background-color 0.3s ease-in-out;		/*  */
 }
 
-.uad_num_button:active /*  */
+.uad_num_button:active /* Animation when a number button is pressed */
 {
 	font-family 		: Verdana;		/*  */
 	background-color	: #FFFFFF;		/*  */
@@ -167,11 +175,11 @@
 
 /***********************************************************************************************************************/
 
-.uad_clear_button /*  */
+.uad_clear_button /* Button to clear an input form */
 {
 	background-color 	: #DF7401;		/*  */
 	border 				: 4px solid #DF7401;		/*  */
-	border-radius		: 50%;		/*  */
+	border-radius		: 5%;		/*  */
 	
 	font-family 		: Verdana;		/*  */
 	color				: #FFFFFF;		/*  */
@@ -184,7 +192,7 @@
 	outline				: 0 none;		/*  */
 }
 
-.uad_clear_button:active /*  */
+.uad_clear_button:active /* Animation when clear button is pressed */
 {
 	font-family 		: Verdana;		/*  */
 	background-color	: #FFFFFF;		/*  */
@@ -195,11 +203,11 @@
 
 /***********************************************************************************************************************/
 
-.uad_del_button /*  */
+.uad_del_button /* Button to erase a character from an input */
 {
 	background-color 	: #4da6ff;		/*  */
 	border 				: 4px solid #4da6ff;		/*  */
-	border-radius		: 50%;		/*  */
+	border-radius		: 5%;		/*  */
 	
 	font-family 		: Verdana;		/*  */
 	color				: #FFFFFF;		/*  */
@@ -212,7 +220,7 @@
 	outline				: 0 none;		/*  */
 }
 
-.uad_del_button:active /*  */
+.uad_del_button:active /* Animation for when the delete button is pressed */
 {
 	font-family 		: Verdana;		/*  */
 	background-color	: #FFFFFF;		/*  */
@@ -223,9 +231,9 @@
 
 /***********************************************************************************************************************/
 
-.uad_footer /*  */
+.uad_footer /* Page footer that appears on the bottom of the page */
 {
-	position			: fixed;		/*  */
+	position			: fixed;		/* Footer remains on fixed position on screen */
 	right				: 0;		/*  */
 	bottom				: 0;		/*  */
 	left				: 0;		/*  */
@@ -237,4 +245,37 @@
 	font-family 		: Verdana;		/*  */
 	color				: #FFFFFF;		/*  */
 	text-align			: center;		/*  */
+}
+
+.uad_long_button /* Buttons used to show options to the user */
+{
+	background-color 	: #004d99;
+	border 				: 4px solid #004d99;
+	border-radius		: 4px;		/*  */
+	
+	font-family 		: Verdana;		/*  */
+	color				: #FFFFFF;		/*  */
+	display				: inline-block;		/*  */
+	font-size			: 48px;		/*  */
+	margin				: 8px 18px;		/*  */
+	
+	padding				: 16px 32px;		/*  */
+	transition			: background-color 0.2s ease-in-out;		/*  */
+	outline				: 0 none;		/*  */
+}
+
+.uad_long_button:active /* Buttons used to show options to the user */
+{
+	background-color 	: #FFFFFF;		/*  */
+	border 				: 4px solid #000000;		/*  */
+	border-radius		: 4px;		/*  */
+	
+	font-family 		: Verdana;		/*  */
+	color				: #000000;		/*  */
+	display				: inline-block;		/*  */
+	font-size			: 48px;		/*  */
+	margin				: 8px 18px;		/*  */
+	
+	padding				: 16px 32px;
+	outline				: 0 none;		/*  */
 }

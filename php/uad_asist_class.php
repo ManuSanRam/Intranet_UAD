@@ -21,6 +21,15 @@
 		<head>
 		
 			<!--
+				Load the JavaScript script
+				- Functions to show 
+			-->
+			<script
+				type = "text/javascript"
+				src = "../js/UAD-capture-assistance.js?v=1.4">
+			</script>
+		
+			<!--
 				Load this page's stylesheet
 			-->
 			<link
@@ -35,14 +44,6 @@
 				rel = "stylesheet"
 				type = "text/css"
 				href = "../css/UAD-main-style.css?v=2.4">
-				
-			<!--
-				Load the JavaScript script
-				- Functions to show 
-			-->
-			<link
-				type = "text/javascript"
-				href = "../js/UAD-capture-assistance.js?v=1.2">
 		
 			<!--
 				Page title
@@ -164,25 +165,27 @@
 							id = "ClockDisplay"
 							class = "uad_text"
 							align = "center"
-							style = "font-size: 76px;">
+							style = "font-size: 48px;">
 						</div>
 					</div>
 					
 					<!--
-						1st column: CAPTURE ASSISTANCES
+						2nd column: CAPTURE ASSISTANCES
 						- Save the assistance data on the table.
 					-->
 					<div
 						class = "col"
 						align = "center">
-						<p
+						<div
 							class = "uad_text"
 							align = "center"
-							style = "font-size: 48px">
+							style = "font-size: 48px;">
 							Fundamentos de Fisica I
-						</p>	
+						</div>	
 					</div>	
 				</div>
+				
+				<br><br>
 				
 				<!--
 					3rd row: INFO DISPLAY
@@ -191,16 +194,30 @@
 					- Student buttons. Click to set student as NOT PRESENT.
 					- Click again to unmark as NOT PRESENT.
 				-->
+				<div
+					class = "row">
+					<!--
+						1st column: CAPTURE ASSISTANCES
+						- Save the assistance data on the table.
+					-->
+					<div
+						class = "col"
+						align = "center">
+						<!--
+							1st column: CAPTURE ASSISTANCES
+							- Save the assistance data on the table.
+						-->
+						<input
+							class = "uad_long_button"
+							type = "button"
+							align = "center"
+							value = "Capturar">
+					</div>
+				</div>
+				
 			</div>
 			
-			<!--
-				1st column: CAPTURE ASSISTANCES
-				- Save the assistance data on the table.
-			-->
-			<input
-				class = "uad_long_button"
-				type = "button"
-				value = "Capturar">
+			
 			
 			<!--
 				Footer of the page
