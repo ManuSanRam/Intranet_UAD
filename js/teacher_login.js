@@ -208,7 +208,7 @@ function CheckTime(i)
 	Access to a given URL after a condition is met
 
 *******************************************************************************************************************************************/
-function LogIn(URL)
+function CheckPassword()
 {
 	/*  */
 	var PasswordElement = document.getElementById('prof_password');
@@ -220,13 +220,12 @@ function LogIn(URL)
 	{
 		/*  */
 		alert("¡Contraseña incompleta!");
+		return false;
 	}
 	
-	/*  */
 	else
 	{
-		/*  */
-		location.href = URL;
+		return true;
 	}
 }
 

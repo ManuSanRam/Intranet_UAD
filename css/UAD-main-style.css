@@ -67,10 +67,9 @@
 	font-family 		: Verdana;		/*  */
 	color				: #FFFFFF;		/*  */
 	display				: inline-block;		/*  */
-	font-size			: 36px;		/*  */
 	
 	margin				: 4px 2px;		/*  */
-	padding				: 16px 44px;		/*  */
+	padding				: 20px 48px;		/*  */
 	
 	text-align			: center;		/*  */
 	transition			: background-color 0.3s ease-in-out;		/*  */
