@@ -3,20 +3,20 @@
 
 /*******************************************************************************************************************************************
 *******************************************************************************************************************************************/
-function OpenStudentsLogin()
+function OpenStudentLogin()
 {
 	var a = document.createElement('a');
 	location.href = "../php/student_login.php";
 }
 
-function OpenTeachersHub()
+function OpenTeacherLogin()
 {
 	var a = document.createElement('a');
-	location.href = "../php/teacher_hub.php";
+	location.href = "../php/teacher_login.php";
 }
 
-function OpenStaffHub()
+function OpenStaffLogin()
 {
 	var a = document.createElement('a');
-	location.href = "../php/staff_hub.php";
+	location.href = "../php/staff_login.php";
 }

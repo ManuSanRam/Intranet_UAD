@@ -22,7 +22,7 @@
 			-->
 			<script 
 				type = "text/javascript" 
-				src = "../js/home_login.js?v=1.7">
+				src = "../js/home_login.js?v=1.8">
 			</script>
 			
 			<!--
@@ -50,36 +50,17 @@
 			This function is defined on file "UAD-realtime-clock.js"			
 		 -->
 		<body>
-		<br>
+			<br><br>
+			
 			<!--
-				Page main heading 
+				This heading shows the title of the page
 			-->
-			<center>
-			
-				<!--
-					This heading shows the title of the page
-				-->
-				<h1
-					id = "uad_heading_01"
-					align = "center"
-					style = "font-size:56px">
-					Universidad de Artes Digitales
-				</h1>
-			</center>
-			
-			<center>
-			
-				<!--
-					Instructions for the user to know what to do
-					They tell the user which profile he will enter: As a student, a teacher or a member of the staff
-				-->
-				<p
-					class = "uad_text"
-					align = "center"
-					style = "font-size:24px">		
-					Selecciona tu tipo de perfil para ingresar...
-				</p>
-			</center>
+			<h1
+				id = "uad_heading_01"
+				align = "center"
+				style = "font-size:68px">
+				Bienvenido/a
+			</h1>
 			
 			<br><br><br>
 			
@@ -88,43 +69,65 @@
 				<div
 					class = "col"
 					align = "center">
-					<input
-						class = "uad_button"
-						type = "button"
-						style = "font-size: 48px"
-						value = "PROFESOR"
-						onclick = "OpenTeachersHub()"
-					>
+						<!--
+							Display the university's logo
+							Check path "../Intranet_UAD/media/image/" for logo
+						-->
+						<img
+							src = "/media/image/uad_logo.png"
+							align = "center"
+							width = "613px"
+							height = "auto">
 				</div>
+				
 				<div
 					class = "col"
 					align = "center">
+					
+					<!--
+						Instructions for the user to know what to do
+						They tell the user which profile he will enter: As a student, a teacher or a member of the staff
+					-->
+					<p
+						class = "uad_text"
+						align = "center"
+						style = "font-size:24px">		
+						Ingresa con tu tipo de perfil
+					</p>
+					
 					<input
 						class = "uad_button"
 						type = "button"
 						style = "font-size: 48px"
-						value = "STAFF"
-						onclick = "OpenStaffHub()"
-					>
+						value = "Portal Alumnos"
+						onclick = "OpenStudentLogin()">
+					
+					<br><br>
+					
+					<input
+						class = "uad_button"
+						type = "button"
+						style = "font-size: 48px"
+						value = "Portal Profesores"
+						onclick = "OpenTeacherLogin()">
+						
+					<br><br>
+						
+					<input
+						class = "uad_button"
+						type = "button"
+						style = "font-size: 48px"
+						value = "Portal Staff"
+						onclick = "OpenStaffLogin()">
 				</div>
 			</div>
-			
-			<br><br><br><br>
 			
 			<div
 				class = "row">
-				<div
-					class = "col"
-					align = "center">
-					<input
-						class = "uad_button"
-						type = "button"
-						style = "font-size: 48px"
-						value = "ALUMNO"
-						onclick = "OpenStudentsLogin()"
-					>
-				</div>
+				
 			</div>
+			
+			<br><br><br><br>
 			
 			<!--
 				Footer of the page

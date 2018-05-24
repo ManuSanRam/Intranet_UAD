@@ -1,51 +1,178 @@
-/*
+/*******************************************************************************************************************************************
 
 
 
-*/
-#greeting
-{	
-	animation-name		: anim_greeting; 
-	animation-duration	: 2s;
-	animation-timing-function : ease-in;
-}
+*******************************************************************************************************************************************/
+/**********************************************************************************
 
-@keyframes anim_greeting
+
+
+**********************************************************************************/
+.checkbox-custom-label 
 {
+	display				: inline-block;	/**/
+	font-family			: Verdana;	/**/
+	font-weight			: bold;	/**/
+	font-size			: 24px;	/**/
+	color				: #004d99;	/**/
 	
+	position			: relative;	/**/
+	
+	vertical-align		: middle;	/**/
+	
+	margin				: 5px;	/**/
+	
+	cursor				: pointer;	/**/
 }
 
-.student_assist_button /* Buttons used to show options to the user */
+
+
+/**********************************************************************************
+
+	Hide the default checkbox 
+	
+**********************************************************************************/
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked
 {
-	background-color 	: #004d99;
-	border 				: 4px solid #004d99;
-	border-radius		: 4px;		/*  */
-	
-	font-family 		: Verdana;		/*  */
-	color				: #FFFFFF;		/*  */
-	display				: inline-block;		/*  */
-	font-size			: 24px;		/*  */
-	margin				: 8px 18px;		/*  */
-	
-	text-align			: center;
-	padding				: 16px 32px;		/*  */
-	
-	transition			: background-color 0.2s ease-in-out;		/*  */
-	outline				: 0 none;		/*  */
+	position			: absolute;	/**/
+	left				: -9999px;	/**/
 }
 
-.student_assist_button:active /* Buttons used to show options to the user */
+
+/**********************************************************************************
+
+	
+
+**********************************************************************************/
+[type="checkbox"]:not(:checked) + .checkbox-custom-label
 {
-	background-color 	: #FFFFFF;		/*  */
-	border 				: 4px solid #000000;		/*  */
-	border-radius		: 4px;		/*  */
-	
-	font-family 		: Verdana;		/*  */
-	color				: #000000;		/*  */
-	display				: inline-block;		/*  */
-	font-size			: 24px;		/*  */
-	margin				: 8px 18px;		/*  */
-	
-	padding				: 16px 32px;
-	outline				: 0 none;		/*  */
+	position			: relative;	/**/
+	padding-left		: 100px;	/**/
+	padding-top			: 15px;	/**/
+	cursor				: pointer;	/**/
 }
+
+/**********************************************************************************
+
+
+
+**********************************************************************************/
+[type="checkbox"]:checked + .checkbox-custom-label
+{
+	position			: relative;	/**/
+	padding-left		: 100px;	/**/
+	padding-top			: 15px;	/**/
+	cursor				: pointer;	/**/
+	
+	color 				: #FF0000;	/**/
+	text-decoration		: line-through;	/**/
+}
+
+
+
+/**********************************************************************************
+	
+	Checkbox look
+
+**********************************************************************************/
+[type="checkbox"]:not(:checked) + .checkbox-custom-label:before
+{
+	content				: '';	/**/
+	position			: absolute;	/**/
+	color				: #004d99;	/**/
+	font-family			: Verdana;	/**/
+	font-size			: 24px;	/**/
+	
+	left				: 0;	/**/
+	top					: 0;	/**/
+	
+	width				: 2.5em;	/**/
+	height				: 2.5em;	/**/
+	
+	border				: 2px solid #004D99;	/**/
+	
+	background			: #FFFFFF;	/**/
+	
+	border-radius		: 4px;	/**/
+	
+	box-shadow			: inset 0 1px 3px rgba(0,0,0,.1);	/**/
+}
+
+/**********************************************************************************
+	
+**********************************************************************************/
+[type="checkbox"]:checked + .checkbox-custom-label:before
+{
+	content				: '';	/**/
+	position			: absolute;	/**/
+	color				: #004d99;	/**/
+	font-family			: Verdana;	/**/
+	font-size			: 24px;	/**/
+	
+	left				: 0;	/**/
+	top					: 0;	/**/
+	
+	width				: 2.5em;	/**/
+	height				: 2.5em;	/**/
+	
+	border				: 2px solid #FF0000;	/**/
+	
+	background			: #FFB7B7;	/**/
+	
+	border-radius		: 4px;	/**/
+	
+	box-shadow			: inset 0 1px 3px rgba(0,0,0,.1);	/**/
+}
+
+
+
+/**********************************************************************************
+
+	Checked mark look
+
+**********************************************************************************/
+[type="checkbox"]:not(:checked) + .checkbox-custom-label:after,
+[type="checkbox"]:checked + .checkbox-custom-label:after	
+{
+	content				: '✘';	/**/
+	position			: absolute;	/**/
+	
+	top					: 0px;	/**/
+	left				: 0px;	/**/
+	
+	font-size			: 84px;	/**/
+	
+	line-height			: 0.8;	/**/
+	color				: #FF0000;	/**/
+	transition			: all .3s;	/**/
+	font-family			: Verdana;	/**/
+}
+
+
+
+/**********************************************************************************
+
+	Checked mark changes
+	When not checked, 'x' mark will not show up on screen
+	When checked, it becomes opaque and scales for animation
+
+**********************************************************************************/
+[type="checkbox"]:not(:checked) + .checkbox-custom-label:after
+{
+	opacity				: 0;	/**/
+	transform			: scale(0);	/**/
+}
+
+/**********************************************************************************
+
+
+
+**********************************************************************************/
+[type="checkbox"]:checked + .checkbox-custom-label:after
+{
+	opacity				: 1;	/**/
+	transform			: scale(1);	/**/
+}
+
+

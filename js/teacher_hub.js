@@ -6,11 +6,11 @@
 function OpenClassAssistances()
 {
 	var a = document.createElement('a');
-	location.href = "../php/teacher_assistance_login.php";
+	location.href = "../php/asistencias/class.php";
 }
 
 function OpenClassGrades()
 {
 	var a = document.createElement('a');
-	location.href = "../php/teacher_grades_login.php";
+	location.href = "../php/calificaciones/grades.php";
 }
