@@ -1,11 +1,12 @@
 /*******************************************************************************************************************************************
 
-
+	UAD-assisthub-style.css
+	This style sheet defines the style for elements of the assistance page.
 
 *******************************************************************************************************************************************/
 /**********************************************************************************
 
-
+	Stylize the checkbox label
 
 **********************************************************************************/
 .checkbox-custom-label 
@@ -21,6 +22,7 @@
 	vertical-align		: middle;	/**/
 	
 	margin				: 5px;	/**/
+	padding-bottom		: 20px;
 	
 	cursor				: pointer;	/**/
 }
@@ -42,7 +44,7 @@
 
 /**********************************************************************************
 
-	
+	Stylize the checkbox label in default state - NOT CHECKED
 
 **********************************************************************************/
 [type="checkbox"]:not(:checked) + .checkbox-custom-label
@@ -55,7 +57,7 @@
 
 /**********************************************************************************
 
-
+	Stylize the checkbox label in default state - CHECKED
 
 **********************************************************************************/
 [type="checkbox"]:checked + .checkbox-custom-label
@@ -73,7 +75,7 @@
 
 /**********************************************************************************
 	
-	Checkbox look
+	Stylize the checkbox in default state - NOT CHECKED
 
 **********************************************************************************/
 [type="checkbox"]:not(:checked) + .checkbox-custom-label:before
@@ -100,6 +102,8 @@
 }
 
 /**********************************************************************************
+	
+	Stylize the checkbox in default state - CHECKED
 	
 **********************************************************************************/
 [type="checkbox"]:checked + .checkbox-custom-label:before
@@ -129,7 +133,7 @@
 
 /**********************************************************************************
 
-	Checked mark look
+	Stylize the checkbox mark in CHECKED and NOT CHECKED states
 
 **********************************************************************************/
 [type="checkbox"]:not(:checked) + .checkbox-custom-label:after,
@@ -153,9 +157,7 @@
 
 /**********************************************************************************
 
-	Checked mark changes
-	When not checked, 'x' mark will not show up on screen
-	When checked, it becomes opaque and scales for animation
+	When unchecked, the mark scales down and becomes transparent
 
 **********************************************************************************/
 [type="checkbox"]:not(:checked) + .checkbox-custom-label:after
@@ -166,7 +168,7 @@
 
 /**********************************************************************************
 
-
+	When checked, the mark scales to normal size and becomes fully visible
 
 **********************************************************************************/
 [type="checkbox"]:checked + .checkbox-custom-label:after

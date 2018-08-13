@@ -1,7 +1,7 @@
 <!--
 ********************************************************************************************************************************************
 
-	uad_asist_class.html
+	class.php
 	
 	This is the main page to capture students assistance in class.
 	Here, a teacher logs in and starts capturing 
@@ -22,7 +22,9 @@
 	-->
 	<meta
 		http-equiv="Content-Type"
-		content="text/html; charset=utf-8"/>
+		content="text/html; charset=utf-8"
+		name = "viewport" 
+		content = "width = device-width, initial-scale = 1.0"/>
 		
 		<!--
 		***************************************************************************
@@ -46,11 +48,12 @@
 			***********************************************************************
 				Load this page's stylesheet
 			***********************************************************************
-			-->
+			
 			<link
 				rel = "stylesheet"
 				type = "text/css"
-				href = "/css/UAD-assisthub-style.css?v=4.3">
+				href = "/css/UAD-assisthub-style.css?v=4.5">
+			-->
 		
 			<!--
 			***********************************************************************
@@ -60,7 +63,7 @@
 			<link
 				rel = "stylesheet"
 				type = "text/css"
-				href = "/css/UAD-main-style.css?v=2.4">
+				href = "/css/UAD-main-style.css?v=2.8">
 		
 			<!--
 			***********************************************************************
@@ -69,7 +72,7 @@
 			***********************************************************************
 			-->
 			<title>
-				Toma de asistencias
+				Profesores - Toma de asistencias
 			</title>
 		</head>
 		
@@ -83,8 +86,8 @@
 				/***************************************************************************************************************************
 					PHP code starts here...
 				***************************************************************************************************************************/
-				//
-				header("Content-Type: text/html;charset=utf-8");
+				// Load the charset of the page 
+				header("Content-Type: text/html; charset = utf-8");
 				
 				
 				
@@ -122,7 +125,12 @@
 						"<p 
 							class = 'uad_text' 
 							align = 'center' 
-							style = 'font-size:44px;'>
+							style = '
+								font-size:44px;
+								animation-name: vanish-down-entrance; 
+								animation-duration: 1.6s;
+								transition: transform 1.6s ease-in-out;
+							'>
 							Error al intentar conectar con la base de datos: " . $dbname . "'.
 						</p>";
 					
@@ -211,6 +219,7 @@
 								class = 'col'
 								align = 'center'>
 								<img
+									class = 'uad_logo'
 									src = '/media/image/uad_logo.png'
 									align = 'center'
 									width = '413px'
@@ -223,14 +232,52 @@
 								<p 
 									class = 'uad_text'
 									align = 'center'
-									style = 'font-size:72px;'>
-									Buen día
-								</p>
+									style = 
+									'
+										font-size:60px;
+										animation-name: vanish-down-entrance; 
+										animation-duration: 1.6s;
+										transition: transform 1.6s ease-in-out;
+									'>";
+									
+									// Set the time zone to get the time correctly
+									date_default_timezone_set('America/Mexico_City');
+									
+									$_Morning = "05:00:00";
+									$_Afternoon = "12:00:00";
+									$_Evening = "19:00:00";
+									
+									// Get time to print different message
+										// Before 12:00 pm, print "Buenos dias"
+										if(time() >= strtotime($_Morning) && time() < strtotime($_Afternoon))
+										{
+											echo "Buenos dias";
+										}
+										
+										// Between 12:00 pm and 07:00 pm, print "Buenas tardes"
+										else if(time() >= strtotime($_Afternoon) && time() < strtotime($_Evening))
+										{
+											echo "Buenas tardes";
+										}
+										
+										// After 07:00 pm and before 05:00 am, print "Buenas noches"
+										else if(time() >= strtotime($_Evening) && (time() >= strtotime("00:00:00") && time() < strtotime($_Morning)))
+										{
+											echo "Buenas noches";
+										}
+									
+					echo		"</p>
 								
 								<p 
 									class = 'uad_text'
 									align = 'center'
-									style = 'font-size:44px;'>
+									style = 
+									'
+										font-size:32px;
+										animation-name: vanish-down-entrance; 
+										animation-duration: 1.6s;
+										transition: transform 1.6s ease-in-out;
+									'>
 									" . $_SESSION['TeacherName'] . "
 								</p>
 							</div>
@@ -249,7 +296,12 @@
 								<p 
 									class = 'uad_text'
 									align = 'center'
-									style = 'font-size:42px;'>
+									style = 
+									'
+										font-size:42px;
+										animation-name: vanish-down-entrance; 
+										animation-duration: 1.6s;
+										transition: transform 1.6s ease-in-out;'>
 									En este momento no tiene asistencias que capturar.
 								</p>
 							</div>
@@ -259,7 +311,13 @@
 							class = 'row'>
 							<div
 								class = 'col'
-								align = 'center'>
+								align = 'center'
+								style = 
+								'
+									animation-name: vanish-down-entrance; 
+									animation-duration: 1.6s;
+									transition: transform 1.6s ease-in-out;
+								'>
 								<form 
 									action = '/'>
 									<input
@@ -287,13 +345,12 @@
 				$career_logo_query = 
 				"SELECT
 					nombre,
-					cuatrimestre
+					cuatrimestre,
+					carrera
 				FROM
 					materias
 				WHERE
-					id = '" . $_SESSION['ClassID'] . "'
-				AND
-					carrera = '" . $_SESSION['TeacherCareer'] . "'";
+					id = '" . $_SESSION['ClassID'] . "'";
 				
 				// Save query result, if any was found, on var 
 				$career_logo_result = $connection->query($career_logo_query);
@@ -310,37 +367,47 @@
 						//
 						$_SESSION['ClassName'] = $row['nombre']; //
 						$_SESSION['ClassPeriod'] = $row['cuatrimestre']; //
+						$_SESSION['ClassCareer'] = $row['carrera']; //
 					}
 				}
 			?>
 			
 			<br><br><br>
 			
-			<!--
-				
-			-->
 			<div>
 			
 				<!--
+				*******************************************************************
 					1st row: Page main information
+				*******************************************************************
 				-->
 				<div
 					class = "row">
 					
 					<!--
+					***************************************************************
 						1st column: UAD logo.
 						Show the university's logo.
-						This one is more for formalities, other than anything else
+					***************************************************************
 					-->
 					<div
 						class = "col"
-						align = "center">
+						align = "center"
+						style = 
+						"
+							animation-name: vanish-down-entrance; 
+							animation-duration: 1.6s;
+							transition: transform 1.6s ease-in-out;
+						">
 						
 						<!--
+						***********************************************************
 							Display the university's logo
 							Check path "../Intranet_UAD/media/image/" for logo
+						***********************************************************
 						-->
 						<img
+							class = "uad_logo"
 							src = "/media/image/uad_logo.png"
 							align = "center"
 							width = "413px"
@@ -348,32 +415,77 @@
 					</div>
 					
 					<!--
+					***************************************************************
 						2nd column: WELCOME TO THE USER
 						Display a greeting message to the teacher.
 						Values change depending on the user who logged in
+					***************************************************************
 					-->
 					<div
 						class = "col"
-						align = "center">
+						align = "center"
+						style = 
+						"
+							animation-name: vanish-down-entrance; 
+							animation-duration: 1.6s;
+							transition: transform 1.6s ease-in-out;
+						">
 						
 						<!--
+						***********************************************************
 							Display a simple greeting to the user
+						***********************************************************
 						-->
 						<h1
-							id = "uad_heading_01"
+							class = "uad_heading_01"
 							align = "center"
-							style = "font-size:72px;">
-							Buen día
+							style = "font-size:60px;">
+							<?php
+								// Get current time
+								// Set the time zone to get the time correctly
+								date_default_timezone_set('America/Mexico_City');
+								
+								$_Morning = "05:00:00";
+								$_Afternoon = "12:00:00";
+								$_Evening = "19:00:00";
+								
+								// Get time to print different message
+									// Before 12:00 pm, print "Buenos dias"
+									if(time() >= strtotime($_Morning) && time() < strtotime($_Afternoon))
+									{
+										echo "Buenos dias";
+									}
+									
+									// Between 12:00 pm and 07:00 pm, print "Buenas tardes"
+									else if(time() >= strtotime($_Afternoon) && time() < strtotime($_Evening))
+									{
+										echo "Buenas tardes";
+									}
+									
+									// After 07:00 pm and before 05:00 am, print "Buenas noches"
+									else if(time() >= strtotime($_Evening))
+									{
+										echo "Buenas noches";
+									}
+							?>
 						</h1>
 						
 						<!--
+						***********************************************************
 							Display the user's name
-							Value changes depending on logged user
+							Value changes depending on logged user.
+						***********************************************************
 						-->
 						<p
 							class = "uad_text"
 							align = "center"
-							style = "font-size:44px;">
+							style = 
+							"
+								font-size:32px;
+								animation-name: vanish-down-entrance; 
+								animation-duration: 1.6s;
+								transition: transform 1.6s ease-in-out;
+							">
 							<?php
 								//
 								echo $_SESSION['TeacherName']; 
@@ -382,8 +494,9 @@
 					</div>
 					
 					<!--
+					***************************************************************
 						3rd column: CAREER LOGO
-						Show an image of the class' career.
+						Display career logo.
 						Changes depending on the career the class belongs.
 						
 						Values are:
@@ -393,14 +506,23 @@
 						- LPA : Lic. en Producción Audiovisual
 						
 						Check path "../Intranet/media/image/" for the career logos
+					***************************************************************
 					-->
 					<div
 						class = "col"
-						align = "center">
+						align = "center"
+						style = 
+						"
+							animation-name: vanish-down-entrance; 
+							animation-duration: 1.6s;
+							transition: transform 1.6s ease-in-out;
+						">
 						
 						<!--
+						***********************************************************
 							Display the university's logo
 							Check path "../Intranet_UAD/media/image/" for logo
+						***********************************************************
 						-->
 						<img
 							align = "center"
@@ -409,11 +531,11 @@
 							src = "/media/image/<?php
 									
 									//
-									echo $_SESSION['TeacherCareer'] 
+									echo $_SESSION['ClassCareer'] 
 								?>_logo.png" alt = "Logotipo de <?php 
 									
 									//
-									echo $_SESSION['TeacherCareer']; 
+									echo $_SESSION['ClassCareer']; 
 								?>">
 					</div>
 				</div>
@@ -421,61 +543,102 @@
 				<br>
 				
 				<!--
+				*******************************************************************
 					2nd row: INFO DISPLAY
-					- Class name. Info to display to teacher, changes depending on time.
-					- Date info. Display to user and used to insert data on ABSENCE table on database
-					- Student buttons. Click to set student as NOT PRESENT.
-					- Click again to unmark as NOT PRESENT.
+					- Class name.
+					- Date and time.
+					- Student buttons.
+					- Click again to unmark as ABSENT.
+				*******************************************************************
 				-->
 				<div
 					class = "row">
 					
 					<!--
+					***************************************************************
 						1st column: CAPTURE ASSISTANCES
 						- Save the assistance data on the table.
+					***************************************************************
 					-->
 					<div
 						class = "col"
-						align = "center">
+						align = "center"
+						style = 
+						"
+							animation-name: vanish-down-entrance; 
+							animation-duration: 1.6s;
+							transition: transform 1.6s ease-in-out;
+						">
 						
 						<!--
+						***********************************************************
 							Display the time on screen
+						***********************************************************
 						-->
 						<div
 							id = "ClockDisplay"
 							class = "uad_text"
 							align = "center"
-							style = "font-size: 48px;">
+							style = 
+							"
+								font-size: 48px;
+								animation-name: vanish-down-entrance; 
+								animation-duration: 1.6s;
+								transition: transform 1.6s ease-in-out;
+							">
 						</div>
 						
 						<br>
 						
 						<!--
+						***********************************************************
 							Display the date on screen
+						***********************************************************
 						-->
 						<div
 							id = "DateDisplay"
 							class = "uad_text"
 							align = "center"
-							style = "font-size: 24px"
-						>
+							style = 
+							"
+								font-size: 24px;
+								animation-name: vanish-down-entrance; 
+								animation-duration: 1.6s;
+								transition: transform 1.6s ease-in-out;
+							">
 						</div>
 					</div>
 					
 					<!--
+					***************************************************************
 						2nd column: CAPTURE ASSISTANCES
-						- Display the name of the 
+						- Display the name of the class.
+					***************************************************************
 					-->
 					<div
 						class = "col"
-						align = "center">
+						align = "center"
+						style = 
+						"
+							animation-name: vanish-down-entrance; 
+							animation-duration: 1.6s;
+							transition: transform 1.6s ease-in-out;
+						">
 						
 						<!--
+						***********************************************************
+						***********************************************************
 						-->
 						<div
 							class = "uad_text"
 							align = "center"
-							style = "font-size: 48px;">
+							style = 
+							"
+								font-size: 48px;
+								animation-name: vanish-down-entrance; 
+								animation-duration: 1.6s;
+								transition: transform 1.6s ease-in-out;
+							">
 							<?php
 								//
 								echo $_SESSION['ClassName'];
@@ -485,11 +648,19 @@
 						<br>
 						
 						<!--
+						***********************************************************
+						***********************************************************
 						-->
 						<div
 							class = "uad_text"
 							align = "center"
-							style = "font-size: 24px">
+							style = 
+							"
+								font-size: 24px;
+								animation-name: vanish-down-entrance; 
+								animation-duration: 1.6s;
+								transition: transform 1.6s ease-in-out;
+							">
 							Hora de inicio:  
 							<?php
 								//
@@ -498,11 +669,19 @@
 						</div>
 						
 						<!--
+						************************************************************
+						************************************************************
 						-->
 						<div
 							class = "uad_text"
 							align = "center"
-							style = "font-size: 24px">
+							style = 
+							"
+								font-size: 24px;
+								animation-name: vanish-down-entrance; 
+								animation-duration: 1.6s;
+								transition: transform 1.6s ease-in-out;
+							">
 							Hora de termino:  
 							<?php
 								//
@@ -513,6 +692,8 @@
 						<br>
 						
 						<!--
+						***********************************************************
+						***********************************************************
 						-->
 						<div
 							class = "uad_text"
@@ -540,21 +721,16 @@
 				
 				<br><br><br><br><br>
 				
-				<!--
-					
-				-->
 				<div
 					class = "row">
 					
-					<!--
-						
-					-->
 					<div
 						class = "col"
 						align = "center">
 						
 						<!--
-							
+						***********************************************************
+						***********************************************************
 						-->
 						<p
 							class = "uad_text"
@@ -566,7 +742,11 @@
 				</div>
 				
 				<!--
-					This form sends out 
+				*******************************************************************
+					This form sends out:
+					- A timestamp of a student that is absent
+					- Sends student id, timestamp to class absence registry
+				*******************************************************************
 				-->
 				<form
 					action = "/php/asistencias/captured_class.php"
@@ -591,29 +771,36 @@
 					//
 					$students_result = $connection->query($students_query);
 					
+					$_index = 0;
+					$_students_array = array();
+					
 					/*
 						
 					*/
 					// Check if matching result was found to be posted
 					if ($students_result->num_rows > 0) 
-					{
+					{	
 						// Fetch the associated data if any was found
 						while($row = $students_result->fetch_assoc()) 
 						{
-							$_index = 0;
 							// Create checkboxes inputs_ when checked, student with given ID is currently marked as absent
 							// This means that the date and the students ID will be registered to the database and student's total absences will be added 1 per block
 							echo 
-								"<div 
-									class = 'row'>
-									<div 
-										class = 'col' 
-										align = 'center'>
-											<input type = 'checkbox' id = 'student_" . $_index . "' name = '" . $row['matricula'] . "'>
-											<label class = 'checkbox-custom-label' for = '" . $row['matricula'] . "' >" . $row['nombre'] . "</label>
-									</div>
-								</div>";
+							"<div 
+								class = 'row'>
+								<div 
+									class = 'col' 
+									align = 'center'>
+										" . $row['nombre'] . "<input type = 'checkbox' id = 'students[]' name = 'student' value = '" . $row['matricula'] . "'>
+								</div>
+							</div>";
+								
+							array_push($_students_array, $row['matricula']);
+							$_index++;
 						}
+						
+						$_SESSION["StudentArray"] = $_students_array;
+						$_SESSION["StudentCount"] = $_index;
 					} 
 					
 					//
@@ -635,6 +822,7 @@
 							</div>
 						</div>";
 						
+						//
 						$connection->close();
 						
 						//
@@ -645,24 +833,31 @@
 				<br><br><br>
 				
 					<!--
+					***************************************************************
 						3rd row: INFO DISPLAY
 						- Class name. Info to display to teacher, changes depending on time.
 						- Date info. Display to user and used to insert data on ABSENCE table on database
 						- Student buttons. Click to set student as NOT PRESENT.
 						- Click again to unmark as NOT PRESENT.
+					***************************************************************
 					-->
 					<div
 						class = "row">
 						<!--
+						***********************************************************
 							1st column: CAPTURE ASSISTANCES
 							- Save the assistance data on the table.
+						***********************************************************
 						-->
 						<div
 							class = "col"
 							align = "center">
+							
 							<!--
+							*******************************************************
 								1st column: CAPTURE ASSISTANCES
 								- Save the assistance data on the table.
+							*******************************************************
 							-->
 							<input
 								class = "uad_form_button"
@@ -675,8 +870,10 @@
 			</div>
 			
 			<!--
+			***********************************************************************
 				Footer of the page
 				Shows the information of the school, and the year of development
+			***********************************************************************
 			-->
 			<div
 				class = "uad_footer">

@@ -1,7 +1,7 @@
 <!--
 ********************************************************************************************************************************************
 
-	index.php
+	teacher_hub.php
 	
 	This is the main page to capture students assistance in class.
 	Here, a teacher logs in and starts capturing 
@@ -20,6 +20,8 @@
 	****************************************************************************************************************************************
 	-->
 	<meta 
+		http-equiv="Content-Type"
+		content="text/html; charset=utf-8"
 		name = "viewport" 
 		content = "width = device-width, initial-scale = 1.0">
 		
@@ -47,7 +49,7 @@
 			<link
 				rel = "stylesheet"
 				type = "text/css"
-				href = "../css/UAD-main-style.css?v=2.4">
+				href = "../css/UAD-main-style.css?v=2.5">
 			
 			<link
 				rel = "stylesheet"
@@ -60,7 +62,7 @@
 			***********************************************************************
 			-->
 			<title>
-				Profesores UAD - Inicio
+				Profesores - Inicio
 			</title>
 		</head>
 		
@@ -252,7 +254,7 @@
 								class = 'col'
 								align = 'center'>
 								<h1
-									id = 'uad_heading_01'
+									class = 'uad_heading_01'
 									align = 'center'
 									style = 'font-size:72px;'>
 										Lo sentimos...
@@ -325,32 +327,131 @@
 		
 			<br>
 				
-				<!--
-				****************************************************************************************************************************
-					Display a simple greeting to the teacher
-				****************************************************************************************************************************
-				-->
-				<h1
-					id = "uad_heading_01"
-					align = "center"
-					style = "font-size:72px;">
-						Buen día
-				</h1>
-			
-			<p
-				class = "uad_text"
-				align = "center"
-				style = "font-size:44px;">
-				<?php
-					//
-					echo $_SESSION['TeacherName']; 
-				?>
-			</p>
+			<!--
+			****************************************************************************************************************************
+				Display a simple greeting to the teacher
+			****************************************************************************************************************************
+			-->
+			<div
+				class = "row">
+				<div
+					class = "col"
+					align = "left">
+				</div>
+				
+				<div
+					class = "col"
+					align = "center">
+					
+					<!--
+					***************************************************************
+						
+					***************************************************************
+					-->
+					<h1
+						class = "uad_heading_01"
+						align = "left"
+						style = 
+						"
+							font-size:60px; 
+							animation-name: vanish-down-entrance; 
+							animation-duration: 1.6s;
+							transition: transform 1.6s ease-in-out;
+						">
+							<?php
+								// Get current time
+								// Set the time zone to get the time correctly
+								date_default_timezone_set('America/Mexico_City');
+								
+								$_Morning = "05:00:00";
+								$_Afternoon = "12:00:00";
+								$_Evening = "19:00:00";
+								
+								// Get time to print different message
+								// Before 12:00 pm, print "Buenos dias"
+								if(time() >= strtotime($_Morning) && time() < strtotime($_Afternoon))
+								{
+									echo "Buenos dias";
+								}
+								
+								// Between 12:00 pm and 07:00 pm, print "Buenas tardes"
+								else if(time() >= strtotime($_Afternoon) && time() < strtotime($_Evening))
+								{
+									echo "Buenas tardes";
+								}
+								
+								// After 07:00 pm and before 05:00 am, print "Buenas noches"
+								else if(time() >= strtotime($_Evening))
+								{
+									echo "Buenas noches";
+								}
+							?>
+					</h1>
+					
+					<!--
+					***************************************************************
+					
+					***************************************************************
+					-->
+					<p
+						class = "uad_text"
+						align = "left"
+						style = 
+						"
+							font-size:32px;
+							animation-name: vanish-down-entrance; 
+							animation-duration: 1.6s;
+							transition: transform 1.6s ease-in-out;
+						">
+						<?php
+							//
+							echo $_SESSION['TeacherName']; 
+						?>
+					</p>
+				</div>
+				
+				<div
+					class = "col"
+					align = "right">
+					<!--
+					***************************************************************
+						Display the university's logo
+						Check path "../Intranet_UAD/media/image/" for logo.
+					***************************************************************
+					-->
+					<img
+						align = "center"
+						width = "auto"
+						height = "auto"
+						style = 
+						"
+							animation-name: vanish-down-entrance; 
+							animation-duration: 1.6s;
+							transition: transform 1.6s ease-in-out;
+						;"
+						src = "/media/image/
+						<?php
+							//
+							echo $_SESSION['TeacherCareer'] 
+							?>_logo.png" alt = "Logotipo de <?php 
+							
+							//
+							echo $_SESSION['TeacherCareer']; 
+						?>">
+				</div>
+				
+				<div
+					class = "col"
+					align = "right">
+				</div>
+			</div>
 			
 			<br><br><br>
 			
 			<!--
-				
+			***********************************************************************
+				Teacher presentation
+			***********************************************************************
 			-->
 			<div
 				class = "row">
@@ -372,7 +473,9 @@
 					***************************************************************
 					-->
 					<img
+						class = "uad_logo"
 						src = "/media/image/uad_logo.png"
+						style = "animation-duration : 2.1s;"
 						align = "center"
 						width = "513px"
 						height = "auto">
@@ -393,7 +496,10 @@
 				-->
 				<div
 					class = "col"
-					align = "center">
+					align = "center"
+					style = "animation-name: vanish-down-entrance; 
+							animation-duration: 1.6s;
+							transition: transform 1.6s ease-in-out;">
 						<!--
 						***********************************************************
 							Subtitle of the section
@@ -402,7 +508,13 @@
 						<p
 							align = "center"
 							class = "uad_text"
-							style = "font-size:36px">
+							style = 
+							"
+								font-size:36px
+								animation-name: vanish-down-entrance; 
+								animation-duration: 1.6s;
+								transition: transform 1.6s ease-in-out;
+							">
 								Seleccione una acción
 						</p>
 						
