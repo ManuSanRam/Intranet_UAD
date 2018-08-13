@@ -8,98 +8,199 @@
 --------------------------------------------------------------------------------------------------->
 <!DOCTYPE html>
 <html>
+
+	<!--
+		Load the character set
+	-->
 	<meta
-		charset = "UTF-8"
-	>
+		charset = "UTF-8">
+		
+		<!--
+			Page head
+		-->
 		<head>
+		
 			<!--
-				Load the stylesheet
-				This stylesheet contains styling for frequently used HTML elements
+				Load this page's stylesheet
 			-->
 			<link
 				rel = "stylesheet"
 				type = "text/css"
-				href = "../css/UAD-main-style.css?v=1.4">
+				href = "../css/UAD-assisthub-style.css?v=3.1">
+		
+			<!--
+				Load the main stylesheet
+			-->
+			<link
+				rel = "stylesheet"
+				type = "text/css"
+				href = "../css/UAD-main-style.css?v=2.4">
 				
 			<!--
 				Load the JavaScript script
+				- Functions to show 
 			-->
 			<link
 				type = "text/javascript"
-				href = "../js/uad_list-js?v=1.0">
+				href = "../js/UAD-capture-assistance.js?v=1.2">
 		
 			<!--
+				Page title
+				Title for the tabs
 			-->
 			<title>
 				Toma de asistencias
 			</title>
 		</head>
 		
-		<body>
-			<!--
-			-->
-			<div
-				class = "row">
+		<!--
+			Body of the page 
+		-->
+		<body onload = "CurrentTimeDate()">
+			
+			<div>
+			
+				<!--
+					1st row: 
+				-->
 				<div
-					class = "col"
-					align = "center">
+					class = "row">
 					
 					<!--
-						UAD logo image
+						1st column:
 					-->
-					<img
-						src = "../media/image/uad_logo.png"
-						width = "413px"
-						height = "auto">
+					<div
+						class = "col"
+						align = "center">
+						
+						<!--
+							Display the university's logo
+							Check path "../Intranet_UAD/media/image/" for logo
+						-->
+						<img
+							src = "../media/image/uad_logo.png"
+							align = "center"
+							width = "413px"
+							height = "auto">
+					</div>
+					
+					<!--
+						2nd column: WELCOME TO THE USER
+						Display a greeting message to the teacher.
+						Values change depending on the user who logged in
+					-->
+					<div
+						class = "col"
+						align = "center">
+						
+						<!--
+							Display a simple greeting to the user
+						-->
+						<h1
+							id = "uad_heading_01"
+							align = "center"
+							style = "font-size:72px;">
+							¡Buen dia!
+						</h1>
+						
+						<!--
+							Display the user's name
+							Value changes depending on logged user
+						-->
+						<p
+							class = "uad_text"
+							align = "center"
+							style = "font-size:44px;">
+							Hector Manuel Gómez Gutiérrez
+						</p>
+					</div>
+					
+					<!--
+						3rd column: CAREER LOGO
+						Show an image of the class' career.
+						Changes depending on the career the class belongs.
+						
+						Values are:
+						- IDV : Ingenieria en Desarrollo de Videojuegos
+						- LDDA : Lic. en Diseño y Desarrollo de Aplicaciones
+						- LA : Lic. en Animación
+						- LPA : Lic. en Producción Audiovisual
+						
+						Check path "../Intranet/media/image/" for the career logos
+					-->
+					<div
+						class = "col"
+						align = "center">
+						<!--
+							Display the university's logo
+							Check path "../Intranet_UAD/media/image/" for logo
+						-->
+						<img
+							src = "../media/image/idv_logo.png"
+							align = "center"
+							width = "auto"
+							height = "auto">
+					</div>
 				</div>
 				
 				<!--
-					Greetings to the user
+					2nd row: INFO DISPLAY
+					- Class name. Info to display to teacher, changes depending on time.
+					- Date info. Display to user and used to insert data on ABSENCE table on database
+					- Student buttons. Click to set student as NOT PRESENT.
+					- Click again to unmark as NOT PRESENT.
 				-->
 				<div
-					class = "col"
-					align = "center">
-					<h1
-						id = "uad_heading_01"
-						align = "center"
-						style = "font-size:72px">
-						¡Buen dia!
-					</h1>
-				</div>
-				
-				<div
-					class = "col"
-					align = "center">
+					class = "row">
 					
 					<!--
-						Career image
+						1st column: CAPTURE ASSISTANCES
+						- Save the assistance data on the table.
 					-->
-					<img
-						src = "../media/image/idv_logo.jpg">
+					<div
+						class = "col"
+						align = "center">
+						<div
+							id = "ClockDisplay"
+							class = "uad_text"
+							align = "center"
+							style = "font-size: 76px;">
+						</div>
+					</div>
+					
+					<!--
+						1st column: CAPTURE ASSISTANCES
+						- Save the assistance data on the table.
+					-->
+					<div
+						class = "col"
+						align = "center">
+						<p
+							class = "uad_text"
+							align = "center"
+							style = "font-size: 48px">
+							Fundamentos de Fisica I
+						</p>	
+					</div>	
 				</div>
+				
+				<!--
+					3rd row: INFO DISPLAY
+					- Class name. Info to display to teacher, changes depending on time.
+					- Date info. Display to user and used to insert data on ABSENCE table on database
+					- Student buttons. Click to set student as NOT PRESENT.
+					- Click again to unmark as NOT PRESENT.
+				-->
 			</div>
 			
 			<!--
-				2nd row:
-				Class information
-				>> Class' name
-				>> Teacher's name
+				1st column: CAPTURE ASSISTANCES
+				- Save the assistance data on the table.
 			-->
-			<div
-				class = "row">
-				<div
-					class = "col"
-					align = "center">
-					<!--
-						Information of the class
-					-->
-					<p
-						class = "uad_text"
-						style = "font-size:44px">
-						Prof. Hector Gómez Gutiérrez
-					</p>
-				</div>
-			</div>
+			<input
+				class = "uad_long_button"
+				type = "button"
+				value = "Capturar">
 			
 			<!--
 				Footer of the page
