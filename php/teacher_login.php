@@ -30,7 +30,7 @@
 		-->
 		<script 
 			type = "text/javascript" 
-			src = "../js/teacher_login.js?v=2.0">
+			src = "../js/teacher_login.js?v=2.2">
 		</script>
 		
 		<!--
@@ -97,7 +97,7 @@
 					animation-duration: 1.6s;
 					transition: transform 1.6s ease-in-out;
 				">
-				Inicio de sesión
+				Portal Profesores
 			</h1>
 		</center>
 		
@@ -129,7 +129,8 @@
 			Checks if code is complete (All 4 digits written)
 		***********************************************************************
 		-->
-		<form 
+		<form
+			id="TeacherLoginForm"
 			action = "/php/teacher_hub.php"
 			method = "post"
 			onsubmit = "return CheckPassword();">
@@ -163,21 +164,6 @@
 						placeholder = "Clave..."
 						maxlength = "4">
 					
-					<br><br>
-					
-					<!--
-					***********************************************************
-						Log In button
-						Only works if input field is not empty
-						Or incomplete.
-					***********************************************************
-					-->
-					<input
-						class = "uad_form_button"
-						type = "submit"
-						onclick = "CheckPassword()"
-						value = "Iniciar">
-					
 					<!--
 					***********************************************************
 						Eye button
@@ -186,9 +172,20 @@
 					-->
 					<input
 						class = "uad_eyeicon_button"
-						onclick = "HideShowPassword()"
+						onmouseover = "HideShowPassword()"
+						onmouseout = "HideShowPassword()"
 						type = "button">
-	
+						
+					<br><br><br>
+					
+					<img
+						class = "uad_logo"
+						src = "/media/image/uad_logo.png"
+						align = "center"
+						width = "400"
+						height = "auto"
+						style = "animation-duration : 2.1s;"
+					>
 				</div>
 				
 				<br><br>

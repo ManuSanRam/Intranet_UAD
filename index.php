@@ -107,7 +107,7 @@
 							$_Evening = "19:00:00";
 							
 							// Get time to print different message
-								// Before 12:00 pm, print "Buenos dias"
+								// Between 5:00 am and 12:00 pm, print "Buenos dias"
 								if(time() >= strtotime($_Morning) && time() < strtotime($_Afternoon))
 								{
 									echo "Buenos dias";
@@ -119,8 +119,8 @@
 									echo "Buenas tardes";
 								}
 								
-								// After 07:00 pm and before 05:00 am, print "Buenas noches"
-								else if(time() >= strtotime($_Evening))
+								// Between 19:00 pm and 05:00 am, print "Buenas noches"
+								else 
 								{
 									echo "Buenas noches";
 								}

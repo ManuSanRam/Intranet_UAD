@@ -381,7 +381,7 @@
 								}
 								
 								// After 07:00 pm and before 05:00 am, print "Buenas noches"
-								else if(time() >= strtotime($_Evening))
+								else
 								{
 									echo "Buenas noches";
 								}

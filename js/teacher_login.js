@@ -266,10 +266,17 @@ function InsertPassword(val)
 	var Input = document.getElementById('prof_password'), length = Input.value.length;
 	
 	/*  */
-	if(length < 4)
+	if(length < 3)
 	{
 		/*  */
 		Input.value = Input.value + val;
+	}
+	
+	else
+	{
+		/*  */
+		Input.value = Input.value + val;
+		document.getElementById("TeacherLoginForm").submit();
 	}
 }
 
